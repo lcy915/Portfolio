@@ -30,7 +30,7 @@ body {
   padding-top: 70px;
   color: var(--text-color);
   background-color: var(--bg-dark);
-  max-width: 100%;
+  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -52,22 +52,57 @@ body {
 /* Navbar */
 .navbar {
   padding-left: 20px;
-  height: 70px;
-  overflow: hidden;
+  padding-right: 20px;
+  height: auto;
+  min-height: 70px;
+  overflow: visible;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-collapse {
   flex-basis: unset;
 }
 
+.navbar-nav {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (max-width: 991px) {
+  .navbar {
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 60px;
+    flex-wrap: wrap;
+  }
+
   .navbar-collapse {
+    width: 100%;
     padding-top: 10px;
+    padding-bottom: 10px;
+    flex-basis: 100%;
+    order: 3;
+    text-align: center;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 !important;
+    align-items: stretch;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
   }
 
   .navbar .nav-link {
     margin: 0 !important;
-    padding: 8px 0 !important;
+    padding: 12px 20px !important;
+    font-size: 0.8rem;
+    text-align: center;
   }
 }
 
@@ -77,6 +112,7 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 1.1rem;
+  white-space: nowrap;
 }
 
 .typing-text {
@@ -119,6 +155,7 @@ body {
   margin: 0 15px;
   position: relative;
   border-bottom: 2px solid transparent;
+  white-space: nowrap;
 }
 
 .navbar .nav-link i {
@@ -680,9 +717,17 @@ body {
 }
 
 /* Contact Icons */
+.contact-icons {
+  flex-wrap: wrap;
+}
+
 .contact-icons a {
   color: #00d4ff;
   transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
 }
 
 .contact-icons a:nth-child(1) {
@@ -721,28 +766,28 @@ a:hover {
   .navbar {
     padding-left: 10px;
     padding-right: 10px;
-    height: auto;
+    min-height: 60px;
   }
 
   .navbar-brand {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .favicon-img {
     height: 28px !important;
     width: 28px !important;
-    margin-right: 8px;
+    margin-right: 5px;
   }
 
   .navbar .nav-link {
-    font-size: 0.85rem;
-    margin: 5px 0;
-    padding: 8px 0;
+    font-size: 0.8rem;
+    margin: 0 !important;
+    padding: 6px 8px !important;
   }
 
   .navbar .nav-link i {
-    font-size: 1rem;
-    margin-right: 5px;
+    font-size: 0.9rem;
+    margin-right: 4px;
   }
 
   body {
@@ -752,18 +797,18 @@ a:hover {
   /* Hero Section */
   .hero-section {
     min-height: auto;
-    padding: 60px 15px;
+    padding: 40px 20px;
   }
 
   .hero-title {
-    font-size: 1.8rem !important;
-    margin-bottom: 15px;
+    font-size: 2rem !important;
+    margin-bottom: 12px;
   }
 
   .hero-subtitle {
-    font-size: 0.95rem !important;
-    line-height: 1.4;
-    margin-bottom: 20px;
+    font-size: 1rem !important;
+    line-height: 1.5;
+    margin-bottom: 25px;
   }
 
   .hero-content {
@@ -794,16 +839,18 @@ a:hover {
 
   /* About Section */
   .about-section {
-    padding: 50px 15px !important;
+    padding: 40px 20px !important;
   }
 
   .profile-img {
-    width: 150px;
+    width: 160px;
+    margin-bottom: 20px;
   }
 
   .about-text {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     text-align: left;
+    line-height: 1.6;
   }
 
   .about-contact p {
@@ -823,12 +870,12 @@ a:hover {
 
   /* Projects Section */
   .projects-section {
-    padding: 50px 15px !important;
+    padding: 40px 20px !important;
   }
 
   .project-card {
-    padding: 20px 15px;
-    margin-bottom: 40px;
+    padding: 25px 20px;
+    margin-bottom: 35px;
     flex-direction: column;
   }
 
@@ -859,12 +906,13 @@ a:hover {
 
   /* Skills Section */
   .skills-section {
-    padding: 50px 15px !important;
+    padding: 40px 20px !important;
   }
 
   .skills-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 12px;
+    padding: 0 10px;
   }
 
   .skill-tag {
@@ -879,35 +927,44 @@ a:hover {
 
   /* Resume Section */
   .resume-section {
-    padding: 50px 15px !important;
+    padding: 40px 20px !important;
   }
 
   .resume-section p {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
   }
 
   /* Contact Section */
   .contact-section {
-    padding: 50px 15px !important;
+    padding: 40px 20px !important;
   }
 
   .contact-icons {
-    font-size: 2.5rem;
+    gap: 15px !important;
   }
 
   .contact-icons a {
-    margin: 0 10px;
+    font-size: 1.8rem;
   }
 
   /* General */
   .container {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100%;
+    max-width: 100%;
   }
 
   section {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    width: 100%;
+  }
+
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .about-contact {
@@ -962,5 +1019,13 @@ a:hover {
   .tools-tag {
     font-size: 0.75rem;
     padding: 4px 10px;
+  }
+
+  .contact-icons a {
+    font-size: 1.5rem;
+  }
+
+  .contact-icons {
+    gap: 12px !important;
   }
 }
